@@ -222,3 +222,47 @@ ul li a:hover {
 .flex-info {
     margin-top: auto;
 }
+
+/*shopping bag.css*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 45%;
+    margin: auto;
+    text-align: left;
+}
+.column {
+  float: left;
+  width: 46%;
+  padding: 10px;
+}
+.column2 {
+  float: right;
+  text-align: right;
+  width: 46%;
+  padding: 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#purchase {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    height:40px;
+}
+
+#purchase a {
+    color: white;
+    text-decoration: none;
+    align-items: center;
+}
