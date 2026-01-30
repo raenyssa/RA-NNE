@@ -60,7 +60,7 @@ img {
   font-weight: normal;
   color: #000000;
 }
-.guest-button {
+#Enter-button {
   margin-top: 18px;
   padding: 6px 18px;
   border-radius: 12px;
@@ -70,14 +70,14 @@ img {
   transition: all 0.2s ease;
 }
 
-.guest-button h4 {
+#Enter-button h4 {
   margin: 0;
   font-size: 13px;
   font-weight: normal;
   color: #000000;
 }
 
-.guest-button:hover {
+#Enter-button:hover {
   background: #474747;
 }
 
@@ -117,27 +117,6 @@ img {
 
 .forgot-password:hover {
   text-decoration: underline;
-}
-.enter-button {
-  border: 1.5px solid #333;
-  border-radius: 12px;
-  padding: 8px 28px;
-  background: white;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.enter-button h4 {
-  margin: 0;
-  font-weight: normal;
-}
-
-.enter-button:hover {
-  background: #f2f2f2;
-}
-
-.enter-button:active {
-  transform: scale(0.96);
 }
 
 /*about*/
@@ -223,6 +202,114 @@ ul li a:hover {
     margin-top: auto;
 }
 
+/*individual clothes.css*/
+/* Reset extras (normalize handles some already) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  background: #ffffff;
+  color: #000;
+}
+
+/* ===== HEADER AREA ===== */
+.individual-clothes-header {
+  background-color: #f6dede; /* soft pink */
+  text-align: center;
+  padding: 25px 15px 10px;
+  position: relative;
+}
+
+.individual-clothes-header h1 {
+  font-size: 38px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* Logo spacing */
+.individual-clothes-header img {
+  margin-bottom: 15px !important;
+}
+
+/* Slider dots */
+.dots {
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  border: 1.5px solid #e88b9a;
+  background: transparent;
+}
+
+.dot.active {
+  background: #e88b9a;
+}
+
+/* ===== PRODUCT INFO ===== */
+.info {
+  max-width: 420px;
+  margin: 40px auto 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Product name */
+.name {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+/* Thick black divider */
+.divider {
+  height: 6px;
+  background: #000;
+  width: 85%;
+  margin: 0 auto 20px;
+}
+
+/* Description */
+.description {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Price aligned left like the design */
+.price {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.purchase-btn {
+  display: block;
+  width: 85%;
+  max-width: 420px;
+  margin: 0 auto 50px;
+  padding: 14px 0;
+  text-align: center;
+  border: 2px solid #000;
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.purchase-btn:hover {
+  background:grey;
+  color: #fff;
+}
+
 /*shopping bag.css*/
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -266,3 +353,4 @@ ul li a:hover {
     text-decoration: none;
     align-items: center;
 }
+
