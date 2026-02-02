@@ -3,7 +3,7 @@
 .login-signup {
   margin: 0;
   height: 100vh;
-  background-color: #e6e6e6;
+  background-color: #f6d6d6;
   font-family: "Georgia", serif;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ img {
 .login-button,
 .signup-button {
   width: 260px;
-  background: #ffffff;
+  background: #f6d6d6;
   border: 1.5px solid #333;
   border-radius: 14px;
   text-align: center;
@@ -78,7 +78,7 @@ img {
 }
 
 #Enter-button:hover {
-  background: #474747;
+  background: #efcbe5;
 }
 
 /*login.css*/
@@ -91,7 +91,7 @@ img {
 /*input field for both login and signup pages*/
 #input-field {
   width: 260px;
-  background: white;
+  background: rgb(255, 255, 255);
   border: 1.5px solid #333;
   border-radius: 12px;
   padding: 10px 15px;
@@ -132,7 +132,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: #ebd5d5;
     display: flex;
     justify-content: center;
 }
@@ -162,7 +162,7 @@ ul li a:hover {
 .container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: white;
+    background-color: #f6d6d6;
     padding: 20px;
     gap: 20px;
 }
@@ -414,7 +414,6 @@ body {
     bottom:-6px;
 }
 
-/* 🔥 YOUR CUSTOM BUTTON */
 .button{
     display:block;            /* makes it behave like a button */
     width:100%;
