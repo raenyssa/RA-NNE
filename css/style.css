@@ -209,14 +209,6 @@ ul li a:hover {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Times New Roman", serif;
-  background: #ffffff;
-  color: #000;
-}
-
-/* ===== HEADER AREA ===== */
 .individual-clothes-header {
   background-color: #f6dede; /* soft pink */
   text-align: center;
@@ -255,61 +247,101 @@ body {
   background: #e88b9a;
 }
 
-/* ===== PRODUCT INFO ===== */
-.info {
-  max-width: 420px;
-  margin: 40px auto 20px;
+.individual-clothes {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8e4e4;
   text-align: center;
-  padding: 0 20px;
 }
 
-/* Product name */
-.name {
-  font-size: 20px;
-  font-weight: normal;
-  margin-bottom: 12px;
+h1 {
+  margin-top: 20px;
 }
 
-/* Thick black divider */
-.divider {
-  height: 6px;
-  background: #000;
-  width: 85%;
-  margin: 0 auto 20px;
+/* Carousel container */
+.carousel {
+  position: relative;
+  width: 320px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-/* Description */
-.description {
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 320px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
   font-size: 18px;
-  margin-bottom: 40px;
 }
 
-/* Price aligned left like the design */
+.prev {
+ left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #ff8fa3;
+        }
+/* Product info */
+.info {
+ max-width: 320px;
+ margin: 30px auto;
+}
+
 .price {
-  font-size: 20px;
-  text-align: left;
-  margin-bottom: 30px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .purchase-btn {
-  display: block;
-  width: 85%;
-  max-width: 420px;
-  margin: 0 auto 50px;
-  padding: 14px 0;
-  text-align: center;
-  border: 2px solid #000;
-  text-decoration: none;
-  color: #000000;
-  font-size: 18px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  padding: 10px 20px;
+  background: #ff8fa3;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.purchase-btn:hover {
-  background:grey;
-  color: #fff;
+.purchase-btn a {
+  color: white;
+  text-decoration: none;
 }
+
 
 /*shopping bag.css*/
 .card {
@@ -371,6 +403,8 @@ body {
     border-radius:8px;
     color:#e6cfcf;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Heading */
