@@ -388,88 +388,127 @@ h1 {
 /*location.css*/
 /* Top title */
 .page-title{
-    color:#a6a6a6;
-    font-weight:500;
-    margin:35px 0 20px;
+  color:#a6a6a6;
+  font-weight:500;
+  margin:35px 0 20px;
 }
 
 /* Main black card */
 .location{
-    background:black;
-    width:420px;
-    padding:45px 35px;
-    border-radius:8px;
-    color:#e6cfcf;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin:auto;
+  background:black;
+  width:420px;
+  padding:45px 35px;
+  border-radius:8px;
+  color:#e6cfcf;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin:auto;
 }
 
 /* Heading */
 .location h1{
-    text-align:center;
-    font-weight:500;
-    margin-bottom:10px;
+  text-align:center;
+  font-weight:500;
+  margin-bottom:10px;
 }
 
 /* Subtitle */
 .subtitle{
-    text-align:center;
-    font-size:20px;
-    line-height:1.5;
-    margin-bottom:35px;
+  text-align:center;
+  font-size:20px;
+  line-height:1.5;
+  margin-bottom:35px;
 }
 
 /* Brand spacing */
 .brand{
-    letter-spacing:2px;
+  letter-spacing:2px;
 }
 
 /* Regions */
 .region{
-    margin-bottom:30px;
+  margin-bottom:30px;
 }
 
 .region h3{
-    font-weight:500;
-    margin-bottom:18px;
-    position:relative;
+  font-weight:500;
+  margin-bottom:18px;
+  position:relative;
 }
 
 /* Underline */
 .region h3::after{
-    content:"";
-    width:55px;
-    height:2px;
-    background:#e6cfcf;
-    position:absolute;
-    left:0;
-    bottom:-6px;
+  content:"";
+  width:55px;
+  height:2px;
+  background:#e6cfcf;
+  position:absolute;
+  left:0;
+  bottom:-6px;
 }
 
 .button{
-    display:block;            /* makes it behave like a button */
-    width:100%;
-    padding:15px;
-    margin-bottom:12px;
-    background:#dcdcdc;
-    color:#cfaeae;
-    border-radius:16px;
-    cursor:pointer;
-    font-size:17px;
-    text-align:left;
-    transition:all 0.25s ease;
+  display:block;            /* makes it behave like a button */
+  width:100%;
+  padding:15px;
+  margin-bottom:12px;
+  background:#dcdcdc;
+  color:#cfaeae;
+  border-radius:16px;
+  cursor:pointer;
+  font-size:17px;
+  text-align:left;
+  transition:all 0.25s ease;
 }
 
 /* Hover effect */
 .button:hover{
-    background:white;
-    color:black;
-    transform:scale(1.02);
+  background:white;
+  color:black;
+  transform:scale(1.02);
 }
 
 /* Click effect */
 .button:active{
-    transform:scale(0.98);
+  transform:scale(0.98);
+}
+
+/*checkedout.css*/
+.checkedout {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  font-family: "Georgia", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.screen {
+  width: 360px;
+  height: 720px;
+  background: #000;
+  position: relative;
+}
+
+.message-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  width: 75%;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.message-box p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
 }
