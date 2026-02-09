@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+	
+</head>
+
+<body>
+<div class="wheel-body">
+    <div class="pointer"></div>
+
+    <div class="wheel-container">
+    <div id="wheel" class="wheel">
+        <div class="segment"><span>TRAVEL POUCH</span></div>
+        <div class="segment"><span>10% OFF</span></div>
+        <div class="segment"><span>SAMPLE PERFUME</span></div>
+        <div class="segment"><span>5% OFF</span></div>
+        <div class="segment"><span>FREE ENGRAVEMENT (ON PERFUMES)</span></div>
+        <div class="segment"><span>3% OFF</span></div>
+    </div>
+    </div>
+    <div class="wheelbutton">
+    <button id="spin-button" onclick="spin()">SPIN</button>
+    </div>
+<script>
+let rotation = 0;
+
+function spin() {
+  const randomSpin = Math.floor(Math.random() * 360) + 1440;
+  rotation += randomSpin;
+  document.getElementById("wheel").style.transform =
+    `rotate(${rotation}deg)`;
+}
+</script>
+
+</body>
+</html>

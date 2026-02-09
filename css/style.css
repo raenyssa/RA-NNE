@@ -534,3 +534,105 @@ h1 {
   font-size: 18px;
   line-height: 1.4;
 }
+
+/*wheel.css*/
+.wheel-body {
+  margin: 0;
+  height: 100vh;
+  background: #ffdbe8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+
+.pointer {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 30px solid #111;
+  margin-bottom: -12px;
+  z-index: 2;
+}
+
+.wheel-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 12px solid #111;
+  overflow: hidden;
+  transform: rotate(0deg);
+  transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+/* 1. Make segments full size so they rotate around the true center */
+.segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /*keep the 60-degree slice clip-path */
+  clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 28.5%);
+}
+
+.segment span {
+  position: absolute;
+  /*position the text container exactly in the middle of the slice */
+  top: 0;
+  left: 50%;
+  width: 50%; /* Half the wheel */
+  height: 100%;
+  
+  /*rotate the 'invisible container' 30deg to hit the slice center */
+  transform-origin: left center;
+  transform: translateY(-50%) rotate(30deg); 
+  
+  /*text styling */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Pushes text toward the outer rim */
+  padding-right: 20px;
+  
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  font-size: 14px; /* Slightly smaller to fit "OFF" and "PERFUME" */
+  text-transform: uppercase;
+}
+
+
+/*rotations (Each slice is 60 degrees) */
+.segment:nth-child(1) { transform: rotate(0deg); background: #ffd1dc; }
+.segment:nth-child(2) { transform: rotate(60deg); background: #ff9fc4; }
+.segment:nth-child(3) { transform: rotate(120deg); background: #ff4fa3; }
+.segment:nth-child(4) { transform: rotate(180deg); background: #ff2f92; }
+.segment:nth-child(5) { transform: rotate(240deg); background: #ff9fc4; }
+.segment:nth-child(6) { transform: rotate(300deg); background: #ff6fae; }
+
+#spin-button {
+  margin-top: 30px;
+  padding: 14px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(#ffc0d9, #ff8fbd);
+  color: #222;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d86a9c;
+}
+
+#spin-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #d86a9c;
+}
