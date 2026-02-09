@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Login</title>
+
     <link rel="stylesheet" href="css/normalize.css">
-	
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<div class="login-signup">
-    <img src="Pictures/logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 150px; height: auto;">
 
-    <div class = "title">
-        <h1>Login</h1>
-    </div>
-    <div id = "input-field">
-        <h4>username</h4>
-    </div>
-    <div id = "input-field">
-        <h4>password</h4>
-    </div>
-    <a href="forgetpassword.html">
-        <div class = "forgot-password">
-            <h4>Forgot Password?</h4>
-        </div>
-    </a> 
-        <div id = "Enter-button"><a href="Fashion.html">Enter</a></button>
-    </div>
-</div>
+    <div class="login-signup">
+        <img src="Pictures/logo.png" alt="Logo" class="logo">
+
+        <h1 class="title">Login</h1>
+
+        <form id="login-form" class="login-form">
+
+            <div class="form" id="add-contact">
+                <form id="add-contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Username</label>
+                        <input type="text" id="contact-name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-msg">Password</label>
+                        <input type="password" id="contact-msg" class="form-control" required>
+                    </div>
+
+                    <a href="forgetpassword.html" class="forgot-password">
+                        Forgot Password?
+                    </a>
+
+                    <input type="submit" value="Enter" class="btn btn-primary" id="contact-submit">
+
+                </form>
+            </div>
+
+            <script src="login.js"></script>
+            <script src="/js/popper.min.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
+            <script src="script.js"></script>
 </body>
+
+</html>

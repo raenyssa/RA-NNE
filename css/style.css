@@ -82,41 +82,63 @@ img {
 }
 
 /*login.css*/
-.title h1 {
-  font-size: 36px;
-  font-weight: normal;
-  letter-spacing: 4px;
-  margin-bottom: 25px;
-}
-/*input field for both login and signup pages*/
-#input-field {
-  width: 260px;
-  background: rgb(255, 255, 255);
-  border: 1.5px solid #333;
-  border-radius: 12px;
-  padding: 10px 15px;
-  margin: 10px 0;
+body {
+  background-color: #f2dede;
+  font-family: serif;
 }
 
-#input-field h4 {
-  margin: 0;
-  font-weight: normal;
-  color: #555;
+.login-signup {
+  text-align: center;
 }
+
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 150px;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* FORM LAYOUT */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* INPUT FIELDS */
+.input-field {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1.5px solid #333;
+  font-size: 16px;
+}
+
+/* FORGOT PASSWORD */
 .forgot-password {
-  margin: 12px 0 30px;
+  margin: 10px 0 30px;
+  font-size: 14px;
   text-decoration: none;
   color: black;
-  font-size: 14px;
-}
-
-.forgot-password h4 {
-  margin: 0;
-  font-weight: normal;
 }
 
 .forgot-password:hover {
   text-decoration: underline;
+}
+
+/* ENTER BUTTON */
+.login-btn {
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1.5px solid #333;
+  cursor: pointer;
 }
 
 /*about*/

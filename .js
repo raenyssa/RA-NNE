@@ -1,7 +1,7 @@
 //[STEP 0]: Make sure our document is A-OK
 document.addEventListener("DOMContentLoaded", function () {
   // What kind of interface we want at the start 
-  const APIKEY = "695f59107ba9c9bac87847b2";
+  const APIKEY = "6989b725bf4bcc5a3a53e48f";
   getContacts();
   document.getElementById("update-contact-container").style.display = "none";
   document.getElementById("add-update-msg").style.display = "none";
@@ -15,21 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // For now, we assume all information is valid
     // You are to do your own data validation
     let contactName = document.getElementById("contact-name").value;
-    let contactEmail = document.getElementById("contact-email").value;
-    let contactMessage = document.getElementById("contact-msg").value;
-    let contactId = document.getElementById("contact-id").value;
-    let contactMentor = document.getElementById("contact-mentor").value;
-    let contactClass = document.getElementById("contact-class").value;
+    let studentid = document.getElementById("student-id").value;
 
     //[STEP 3]: Get form values when the user clicks on send
     // Adapted from restdb API
     let jsondata = {
-      "name": contactName,
-      "email": contactEmail,
-      "message": contactMessage,
-      "id": contactId,
-      "mentor": contactMentor,
-      "class": contactClass
+      "Username": contactName,
+      "Password": studentid,
     };
 
     //[STEP 4]: Create our AJAX settings. Take note of API key
@@ -51,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //[STEP 5]: Send our AJAX request over to the DB and print response of the RESTDB storage to console.
-    fetch("https://interactivedev-458e.restdb.io/rest/contact", settings)
+    fetch("https://raenne-bb06.restdb.io/rest/contact", settings)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -85,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //[STEP 8]: Make our AJAX calls
     // Once we get the response, we modify our table content by creating the content internally. We run a loop to continuously add on data
     // RESTDb/NoSql always adds in a unique id for each data; we tap on it to have our data and place it into our links 
-    fetch("https://interactivedev-458e.restdb.io/rest/contact", settings)
+    fetch("https://raenne-bb06.restdb.io/rest/contact", settings)
       .then(response => response.json())
       .then(response => {
         let content = "";
@@ -110,9 +102,9 @@ document.addEventListener("DOMContentLoaded", function () {
           content = `${content}<tr id='${response[i]._id}'><td>${response[i].name}</td>
           <td>${response[i].email}</td>
           <td>${response[i].message}</td>
-          <td>${response[i].id}</td>
-          <td>${response[i].mentor}</td>
-          <td>${response[i].class}</td>
+          <td>${response[i]["student id"]}</td>
+          <td>${response[i]["student mentor"]}</td>
+          <td>${response[i]["student class"]}</td>
           <td><a href='#' class='delete' data-id='${response[i]._id}'>Del</a></td><td><a href='#update-contact-container' class='update' data-id='${response[i]._id}' data-msg='${response[i].message}' data-name='${response[i].name}' data-email='${response[i].email}'>Update</a></td></tr>`;
 
         }
@@ -137,20 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
       let contactEmail = e.target.getAttribute("data-email");
       let contactMsg = e.target.getAttribute("data-msg");
       let contactId = e.target.getAttribute("data-id");
-      let contactMentor = e.target.getAttribute("data-mentor");
-      let contactClass = e.target.getAttribute("data-class");
       console.log(e.target.getAttribute("data-msg"));
 
       //[STEP 11]: Load in our data from the selected row and add it to our update contact form 
       document.getElementById("update-contact-name").value = contactName;
-      document.getElementById("update-contact-email").value = contactEmail;
-      document.getElementById("update-contact-msg").value = contactMsg;
       document.getElementById("update-contact-id").value = contactId;
-      document.getElementById("update-contact-mentor").value = contactMentor;
-      document.getElementById("update-contact-class").value = contactClass;
-      document.getElementById("update-contact-container").style.display = "block";
     }
-    if(e.target.classList.contains("delete")){
+    if (e.target.classList.contains("delete")) {
       let contactId = e.target.getAttribute("data-id");
       console.log(contactId);
       deleteRecord(contactId);
@@ -179,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateForm(id, contactName, contactEmail, contactMsg) {
     //@TODO create validation methods for id etc. 
 
-    var jsondata = { "name": contactName, "email": contactEmail, "message": contactMsg, "mentor": contactMentor, "class": contactClass };
+    var jsondata = { "name": contactName, "email": contactEmail, "message": contactMsg, "student id": studentid, "student mentor": studentmentor, "student class": studentclass };
     var settings = {
       method: "PUT",
       headers: {
@@ -191,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //[STEP 13a]: Send our AJAX request and hide the update contact form
-    fetch(`https://interactivedev-458e.restdb.io/rest/contact/${id}`, settings)
+    fetch(`https://raenne-bb06.restdb.io/rest/contact/${id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -214,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //[STEP 13a]: Send our AJAX request and hide the update contact form
-    fetch(`https://interactivedev-458e.restdb.io/rest/contact/${id}`, settings)
+    fetch(`https://raenne-bb06.restdb.io/rest/contact/${id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -222,6 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update our contacts table
         getContacts();
       });
-  }//end updateform function
+  }
 
 });
+ 
