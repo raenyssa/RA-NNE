@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+	
+</head>
+
+<body>
+<div class="wheel-body">
+
+    <img src="Pictures/logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 300px; height: 350px;">
+    <a href="Fashion.html">
+        <img src="Pictures/home.png"
+            alt="Home"
+            style="display: block; margin: 0 auto; width: 50px; height: 50px; position: absolute; top: 20px; right: 20px;">
+    </a>
+
+    <div class="pointer"></div>
+
+    <div class="wheel-container">
+    <div id="wheel" class="wheel">
+        <div class="segment"><span>TRAVEL POUCH</span></div>
+        <div class="segment"><span>10% OFF</span></div>
+        <div class="segment"><span>SAMPLE PERFUME</span></div>
+        <div class="segment"><span>5% OFF</span></div>
+        <div class="segment"><span>FREE ENGRAVEMENT (ON PERFUMES)</span></div>
+        <div class="segment"><span>3% OFF</span></div>
+    </div>
+    </div>
+    <div class="wheelbutton">
+    <button id="spin-button" onclick="spin()">SPIN</button>
+    </div>
+<script>
+let rotation = 0;
+
+function spin() {
+  const randomSpin = Math.floor(Math.random() * 360) + 1440;
+  rotation += randomSpin;
+  document.getElementById("wheel").style.transform =
+    `rotate(${rotation}deg)`;
+}
+</script>
+
+</body>
+</html>
