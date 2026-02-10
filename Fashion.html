@@ -2,20 +2,34 @@
 
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Fashion</title>
+    <meta name="viewport" content="width=device-width">
+    <title>Fashion</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
-    
+
 </head>
+
 <body>
- 
+
     <img src="Pictures/logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 300px; height: 350px;">
     <a href="shoppingbag.html">
-        <img src="Pictures/shopping bag.png"
-            alt="Shopping Bag"
+        <img src="Pictures/shopping bag.png" alt="Shopping Bag"
             style="display: block; margin: 0 auto; width: 50px; height: 50px; position: absolute; top: 20px; right: 20px;">
     </a>
+
+    <!-- Search Dropdown -->
+        
+        <div class="dropdown" id="dropdown">
+            <input 
+                type="text" 
+                class="filter-input" 
+                placeholder="Type to filter..."
+                id="filterInput"
+            >
+            <div id="dropdownItems">
+            </div>
+        </div>
+    </div>
 
     <ul>
         <li><a href="Fashion.html">Fashion</a></li>
@@ -27,7 +41,8 @@
     <section class="container">
         <div class="flex-item">
             <div class="flex-img2">
-                <a href="individual-clothes.html"><img src="Pictures/individual1.jpg" alt="HTML tutorial" style="width:450px;height:500px;"></a>
+                <a href="individual-clothes.html"><img src="Pictures/individual1.jpg" alt="HTML tutorial"
+                        style="width:450px;height:500px;"></a>
             </div>
             <div class="flex-info">
                 <h2>Losié</h2>
@@ -52,7 +67,7 @@
             </div>
             <div class="flex-info">
                 <h2>Madine</h2>
-                <p>Black and white dress  </p>
+                <p>Black and white dress </p>
             </div>
         </div>
     </section>
@@ -114,5 +129,5 @@
         </div>
     </section>
 
-    
+    <script src="script/main.js"></script>
 </body>

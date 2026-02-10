@@ -211,3 +211,133 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
  
+// List of names for fashion website
+const names = [
+    "Adele", "Agnes", "Billy", "Bob", 
+    "Calvin", "Christina", "Cindy"
+];
+
+// Get DOM elements for search dropdown
+const searchInput = document.getElementById('searchInput');
+const dropdown = document.getElementById('dropdown');
+const dropdownItems = document.getElementById('dropdownItems');
+const filterInput = document.getElementById('filterInput');
+
+// Initialize dropdown with all names
+function populateDropdown(filter = '') {
+    if (!dropdownItems) return;
+    
+    dropdownItems.innerHTML = '';
+    
+    // Filter names based on input
+    const filteredNames = names.filter(name => 
+        name.toLowerCase().includes(filter.toLowerCase())
+    );
+    
+    if (filteredNames.length === 0) {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No names found';
+        dropdownItems.appendChild(noResults);
+        return;
+    }
+    
+    // Create dropdown items
+    filteredNames.forEach(name => {
+        const item = document.createElement('a');
+        item.className = 'dropdown-item';
+        item.textContent = name;
+        item.href = '#';
+        
+        // When a name is clicked
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchInput.value = name;
+            dropdown.classList.remove('show');
+            searchInput.focus();
+            console.log('Selected:', name);
+        });
+        
+        dropdownItems.appendChild(item);
+    });
+}
+
+// Only initialize if elements exist (for fashion page)
+if (searchInput && dropdown && dropdownItems && filterInput) {
+    // Toggle dropdown when search box is clicked
+    searchInput.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+        
+        if (dropdown.classList.contains('show')) {
+            filterInput.value = '';
+            populateDropdown();
+            filterInput.focus();
+        }
+    });
+
+    // Filter dropdown items as user types
+    filterInput.addEventListener('input', (e) => {
+        populateDropdown(e.target.value);
+    });
+
+    // Also show dropdown when user starts typing in search box
+    searchInput.addEventListener('input', (e) => {
+        if (!dropdown.classList.contains('show')) {
+            dropdown.classList.add('show');
+        }
+        filterInput.value = e.target.value;
+        populateDropdown(e.target.value);
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && e.target !== searchInput) {
+            dropdown.classList.remove('show');
+        }
+    });
+
+    // Close dropdown on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            dropdown.classList.remove('show');
+            searchInput.focus();
+        }
+    });
+
+    // Handle arrow key navigation in dropdown
+    document.addEventListener('keydown', (e) => {
+        if (!dropdown.classList.contains('show')) return;
+        
+        const items = dropdownItems.querySelectorAll('.dropdown-item');
+        if (items.length === 0) return;
+        
+        const currentItem = document.querySelector('.dropdown-item.highlighted');
+        let currentIndex = currentItem ? Array.from(items).indexOf(currentItem) : -1;
+        
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            currentIndex = (currentIndex + 1) % items.length;
+            highlightItem(items, currentIndex);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+            highlightItem(items, currentIndex);
+        } else if (e.key === 'Enter' && currentItem) {
+            e.preventDefault();
+            currentItem.click();
+        }
+    });
+
+    // Helper function to highlight dropdown items
+    function highlightItem(items, index) {
+        items.forEach(item => item.classList.remove('highlighted'));
+        if (items[index]) {
+            items[index].classList.add('highlighted');
+            items[index].scrollIntoView({ block: 'nearest' });
+        }
+    }
+
+    // Initialize with all names
+    populateDropdown();
+}
