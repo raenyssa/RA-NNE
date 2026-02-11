@@ -213,66 +213,61 @@ ul li a:hover {
 }
 
 /*Fashion page(use for the others too*/
+
 /* Dropdown Button */
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41;
-}
-
-/* The search field */
-#myInput {
-  box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-/* The search field when it gets focus/clicked on */
-#myInput:focus {outline: 3px solid #ddd;}
-
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    background: white;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+    border: 1px solid #dfe1e5;
+    border-top: none;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  border: 1px solid #ddd;
-  z-index: 1;
+/* Add a class for when dropdown is visible */
+.dropdown.visible {
+    display: block;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+/* Add styles for active item in keyboard navigation */
+.dropdown-item.active {
+    background-color: #f1f3f4;
+}
+
+#filterInput {
   display: block;
+  margin: 20px auto;   /* 👈 centers horizontally */
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+    #filterInput {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+    #filterList {
+      margin-top: 5px;
+      padding: 0;
+      width: 250px;
+    }
 
+    #filterList li {
+      list-style: none;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      display: none; /* IMPORTANT */
+    }
 
 .container {
     display: grid;

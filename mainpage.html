@@ -1,9 +1,65 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <script src="script/main.js"></script>
+  <meta charset="UTF-8">
+  <title>Search Filter</title>
+  <style>
+    #filterInput {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    #filterList {
+      margin-top: 5px;
+      padding: 0;
+      width: 250px;
+    }
+
+    #filterList li {
+      list-style: none;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      display: none; /* IMPORTANT */
+    }
+  </style>
 </head>
+
+<body>
+
+<input
+  type="text"
+  id="filterInput"
+  placeholder="Search..."
+  autocomplete="off"
+/>
+
+<ul id="filterList">
+  <li>About</li>
+  <li>Base</li>
+  <li>Blog</li>
+  <li>Contact</li>
+  <li>Custom</li>
+  <li>Support</li>
+  <li>Tools</li>
+</ul>
+
+<script>
+  const input = document.getElementById("filterInput");
+  const items = document.querySelectorAll("#filterList li");
+
+  input.addEventListener("input", () => {
+    const value = input.value.toLowerCase();
+
+    items.forEach(item => {
+      if (value !== "" && item.textContent.toLowerCase().includes(value)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

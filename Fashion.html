@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Fashion</title>
+    <title>Search Filter</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <meta charset="UTF-8">
 </head>
 
 <body>
@@ -17,39 +18,56 @@
             style="display: block; margin: 0 auto; width: 50px; height: 50px; position: absolute; top: 20px; right: 20px;">
     </a>
 
-    <!-- Search Dropdown -->
-        
-        <div class="dropdown" id="dropdown">
-            <input 
-                type="text" 
-                class="filter-input" 
-                placeholder="Type to filter..."
-                id="filterInput"
-            >
-            <div id="dropdownItems">
-            </div>
-        </div>
-    </div>
+<div class="search-container">
+  <input
+    type="text"
+    id="filterInput"
+    placeholder="Search fashion..."
+    autocomplete="off"
+  />
+</div>
 
-    <ul>
+<ul id="filterList">
+  <li>About</li>
+  <li>Base</li>
+  <li>Blog</li>
+  <li>Contact</li>
+  <li>Custom</li>
+  <li>Support</li>
+  <li>Tools</li>
+  <li>About</li>
+  <li>Base</li>
+  <li>Blog</li>
+  <li>Contact</li>
+  <li>Custom</li>
+  <li>Support</li>
+  <li>Tools</li>
+</ul>
+
+<script>
+  const input = document.getElementById("filterInput");
+  const items = document.querySelectorAll("#filterList li");
+
+  input.addEventListener("input", () => {
+    const value = input.value.toLowerCase();
+
+    items.forEach(item => {
+      if (value !== "" && item.textContent.toLowerCase().includes(value)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<ul>
         <li><a href="Fashion.html">Fashion</a></li>
         <li><a href="Jewellery.html">Jewellery</a></li>
         <li><a href="Heels.html">Heels</a></li>
         <li><a href="Handbag.html">Handbag</a></li>
         <li><a href="Perfume.html">Perfume</a></li>
     </ul>
-    <section class="container">
-        <div class="flex-item">
-            <div class="flex-img2">
-                <a href="individual-clothes.html"><img src="Pictures/individual1.jpg" alt="HTML tutorial"
-                        style="width:450px;height:500px;"></a>
-            </div>
-            <div class="flex-info">
-                <h2>Losié</h2>
-                <p>White Zip Up Blouse with Mini Buttoned Skirt</p>
-            </div>
-        </div>
-    </section>
 
     <section class="container">
         <div class="flex-item">

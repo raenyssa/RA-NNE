@@ -341,3 +341,29 @@ if (searchInput && dropdown && dropdownItems && filterInput) {
     // Initialize with all names
     populateDropdown();
 }
+const input = document.getElementById("filterInput");
+const items = document.querySelectorAll(".flex-item");
+const searchContainer = document.querySelector(".search-container");
+
+input.addEventListener("input", () => {
+  const value = input.value.toLowerCase();
+  let hasMatch = false;
+
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+
+    if (value !== "" && text.includes(value)) {
+      item.style.display = "block";
+      hasMatch = true;
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  // Toggle dropdown look
+  if (value !== "" && hasMatch) {
+    searchContainer.classList.add("active");
+  } else {
+    searchContainer.classList.remove("active");
+  }
+});
