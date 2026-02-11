@@ -1,65 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Search Filter</title>
-  <style>
-    #filterInput {
-      padding: 10px;
-      width: 250px;
-      font-size: 16px;
-    }
-
-    #filterList {
-      margin-top: 5px;
-      padding: 0;
-      width: 250px;
-    }
-
-    #filterList li {
-      list-style: none;
-      padding: 8px;
-      border-bottom: 1px solid #ddd;
-      display: none; /* IMPORTANT */
-    }
-  </style>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Fashion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    
 </head>
-
 <body>
+    
+    <img src="Pictures/logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 300px; height: 350px;">
+    <a href="shoppingbag.html">
+        <img src="Pictures/shopping bag.png"
+            alt="Shopping Bag"
+            style="display: block; margin: 0 auto; width: 50px; height: 50px; position: absolute; top: 20px; right: 20px;">
+    </a>
+    <ul>
+        <li><a href="Fashion.html">Fashion</a></li>
+        <li><a href="Jewellery.html">Jewellery</a></li>
+        <li><a href="Heels.html">Heels</a></li>
+        <li><a href="Handbag.html">Handbag</a></li>
+        <li><a href="Perfume.html">Perfume</a></li>
+    </ul>
+    <section class="container">
+        <div class="flex-item">
+            <div class="flex-img3">
+                <iframe src="https://skfb.ly/pGtxn/embed" 
+                  name="viewerframe" 
+                  allowfullscreen="true" 
+                  height="950" 
+                  width="800">
+                </iframe>
+            </div>
+            <div class="flex-info">
+                <h2>Zuiuer</h2>
+                <p>Slim, Snake Print Bagutte bag</p>
+            </div>
+        </div>
+    </section>
 
-<input
-  type="text"
-  id="filterInput"
-  placeholder="Search..."
-  autocomplete="off"
-/>
+    <section class="container">
+        <div class="flex-item">
+            <div class="flex-img3">
+                <img src="Pictures/handbags2.jpg">
+            </div>
+            <div class="flex-info">
+                <h2>Towéew</h2>
+                <p>Micro-Top Handle Gray & Pink</p>
+            </div>
+        </div>
+    </section>
 
-<ul id="filterList">
-  <li>About</li>
-  <li>Base</li>
-  <li>Blog</li>
-  <li>Contact</li>
-  <li>Custom</li>
-  <li>Support</li>
-  <li>Tools</li>
-</ul>
-
-<script>
-  const input = document.getElementById("filterInput");
-  const items = document.querySelectorAll("#filterList li");
-
-  input.addEventListener("input", () => {
-    const value = input.value.toLowerCase();
-
-    items.forEach(item => {
-      if (value !== "" && item.textContent.toLowerCase().includes(value)) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  });
-</script>
-
+    <section class="container">
+        <div class="flex-item">
+            <div class="flex-img3">
+                <img src="Pictures/handbags3.jpg">
+            </div>
+            <div class="flex-info">
+                <h2>Sécline</h2>
+                <p>Black Leather Woven Hob bag</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
