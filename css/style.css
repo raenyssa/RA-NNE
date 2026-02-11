@@ -250,24 +250,24 @@ ul li a:hover {
   font-size: 16px;
 }
 
-    #filterInput {
-      padding: 10px;
-      width: 250px;
-      font-size: 16px;
-    }
+#filterInput {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+}
 
-    #filterList {
-      margin-top: 5px;
-      padding: 0;
-      width: 250px;
-    }
+#filterList {
+  margin-top: 5px;
+  padding: 0;
+  width: 250px;
+}
 
-    #filterList li {
-      list-style: none;
-      padding: 8px;
-      border-bottom: 1px solid #ddd;
-      display: none; /* IMPORTANT */
-    }
+#filterList li {
+  list-style: none;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  display: none; /* IMPORTANT */
+}
 
 /*fashion.css*/
 .container {
@@ -311,6 +311,11 @@ ul li a:hover {
 }
 .flex-info {
     margin-top: auto;
+}
+
+.flex-img3 iframe{
+    width: 850px;
+    height: 700px;
 }
 
 /*individual clothes.css*/
