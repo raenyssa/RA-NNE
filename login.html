@@ -19,28 +19,29 @@
 
         <form id="login-form" class="login-form">
 
-            <div class="form" id="add-contact">
-                <form id="add-contact-form">
-                    <div class="form-group">
-                        <label for="contact-name">Username</label>
-                        <input type="text" id="contact-name" class="form-control" required>
-                    </div>
+            <div class="login-container">
+        <h1>Welcome Back</h1>
+        
+        <div id="message" class="message"></div>
 
-                    <div class="form-group">
-                        <label for="contact-msg">Password</label>
-                        <input type="password" id="contact-msg" class="form-control" required>
-                    </div>
-
-                    <div>
-                    <a href="forgetpassword.html" class="forgot-password">
-                        Forgot Password?
-                    </a>
-                    </div>
-                    <div class="submit-button"> 
-                        <a href="Newarrival.html" class="btn btn-secondary">Login</a>
-                    </div>
-                </form>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Username</label>
+                <input type="text" id="email" name="email" required autocomplete="username">
             </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="btn-login" id="loginBtn">Log In</button>
+        </form>
+
+        <div class="forgot-password">
+            <a href="#" id="forgotPassword">Forgot password?</a>
+        </div>
+    </div>
 
             <script src=".js"></script>
             <script src="/js/popper.min.js"></script>

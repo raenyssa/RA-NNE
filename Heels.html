@@ -16,6 +16,154 @@
             alt="Shopping Bag"
             style="display: block; margin: 0 auto; width: 50px; height: 50px; position: absolute; top: 20px; right: 20px;">
     </a>
+
+    <style>
+        body {
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    position: relative;
+    width: 800px; /* Made wider - was 500px */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px; /* Space from top */
+    margin-bottom: 60px; /* Space from bottom */
+}
+
+#filterInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #ccc;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 9999; /* Added to appear on top */
+}
+
+#dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="search-container">
+        <input
+            type="text"
+            id="filterInput"
+            placeholder="Search for fashion items..."
+        />
+        <div id="dropdown">
+            <div id="dropdownItems"></div>
+        </div>
+    </div>
+
+    <script>
+        const items = [
+    "Rene Caovilla",
+    "Aztrita",
+    "Eliane",
+    "Losié",
+    "Dollete",
+    "Madine",
+    "Florént",
+    "Eleinà",
+    "Liérl",
+    "Noàlle",
+    "Roalle",
+    "Helaine",
+    "Clècia",
+    "Rîore",
+    "Loànne",
+    "Jollène",
+    "Chéral",
+    "Blarqe",
+    "Whitney",
+    "Lérrid",
+    "Eriôd",
+    "Winfùl",
+    "Floits",
+    "Plèone",
+    "Furkien",
+    "Dànoka",
+    "Winsk",
+    "Zuiuer",
+    "Towéew",
+    "Sécline",
+    "Genesia",
+    "Chîce Gold",
+    "Chîce Silver",
+    "Dìonne Baguette bag",
+    "Fleur",
+    "Cìoen",
+    "Ludèrn",
+    "Roisse",
+    "Vendôme",
+    "Château",
+    "Vanilla Dream",
+    "1978 Cirurn Signature Scent"
+];
+        
+        const input = document.getElementById('filterInput');
+        const dropdown = document.getElementById('dropdown');
+        const container = document.getElementById('dropdownItems');
+        
+        input.addEventListener('input', function() {
+            const search = input.value.toLowerCase();
+            container.innerHTML = '';
+            
+            if (search === '') {
+                dropdown.classList.remove('show');
+                return;
+            }
+            
+            const matches = items.filter(item => 
+                item.toLowerCase().includes(search)
+            );
+            
+            if (matches.length === 0) {
+                container.innerHTML = '<div style="padding:10px">No results</div>';
+                dropdown.classList.add('show');
+                return;
+            }
+            
+            matches.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'dropdown-item';
+                div.textContent = item;
+                div.onclick = function() {
+                    input.value = item;
+                    dropdown.classList.remove('show');
+                };
+                container.appendChild(div);
+            });
+            
+            dropdown.classList.add('show');
+        });
+    </script>
     <ul>
         <li><a href="Newarrival.html">New Arrival</a></li>
         <li><a href="Fashion.html">Fashion</a></li>

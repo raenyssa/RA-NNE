@@ -214,60 +214,6 @@ ul li a:hover {
 
 /*Fashion page(use for the others too*/
 
-/* Dropdown Button */
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin-top: 8px;
-    background: white;
-    border-radius: 0 0 24px 24px;
-    box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
-    border: 1px solid #dfe1e5;
-    border-top: none;
-    z-index: 1000;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-/* Add a class for when dropdown is visible */
-.dropdown.visible {
-    display: block;
-}
-
-/* Add styles for active item in keyboard navigation */
-.dropdown-item.active {
-    background-color: #f1f3f4;
-}
-
-#filterInput {
-  display: block;
-  margin: 20px auto;   /* 👈 centers horizontally */
-  padding: 10px;
-  width: 300px;
-  font-size: 16px;
-}
-
-#filterInput {
-  padding: 10px;
-  width: 250px;
-  font-size: 16px;
-}
-
-#filterList {
-  margin-top: 5px;
-  padding: 0;
-  width: 250px;
-}
-
-#filterList li {
-  list-style: none;
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-  display: none; /* IMPORTANT */
-}
 
 /*fashion.css*/
 .container {
