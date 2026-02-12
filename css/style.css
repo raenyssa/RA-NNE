@@ -278,6 +278,7 @@ ul li a:hover {
 }
 .flex-info {
     margin-top: auto;
+    font-family: 'Prata', serif;
 }
 
 .flex-img3 iframe{
@@ -288,6 +289,13 @@ ul li a:hover {
 .collection-text {
     text-align: center;
     font-family: 'Prata', serif;
+}
+
+.contact-info
+{
+    text-align: center;
+    font-family: 'Prata', serif;
+    margin-top: 50px;
 }
 /*individual clothes.css*/
 /* Reset extras (normalize handles some already) */
