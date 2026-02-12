@@ -81,6 +81,27 @@ img {
   background: #efcbe5;
 }
 
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    width: 160px;
+    text-align: left;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.form-control {
+    width: 220px;
+    font-size: 14px;
+    border: 1px solid #999;
+    background-color: #eee;
+}
+
 /*login.css*/
 body {
   background-color: #f2dede;
