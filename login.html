@@ -13,40 +13,37 @@
 <body>
 
     <div class="login-signup">
-        <img src="Pictures/logo.png" alt="Logo" class="logo">
+        <img src="Pictures/logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 150px; height: auto;">
 
-        <h1 class="title">Login</h1>
-
-        <form id="login-form" class="login-form">
-
-            <div class="login-container">
+        <div class="title">Login</div>
         <h1>Welcome Back</h1>
         
-        <div id="message" class="message"></div>
+        <div id="message" class="message" style="display: none;"></div>
 
         <form id="loginForm">
             <div class="form-group">
-                <label for="email">Username</label>
-                <input type="text" id="email" name="email" required autocomplete="username">
+                <label for="email">Username or Email</label>
+                <input type="text" id="email" name="email" class="form-control" required autocomplete="username">
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required autocomplete="current-password">
+                <input type="password" id="password" name="password" class="form-control" required autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn-login" id="loginBtn">Log In</button>
+            <button type="submit" class="btn btn-primary" id="loginBtn">Log In</button>
         </form>
 
-        <div class="forgot-password">
+        <div class="forgot-password" style="margin-top: 15px; text-align: center;">
             <a href="#" id="forgotPassword">Forgot password?</a>
+        </div>
+
+        <div style="margin-top: 15px; text-align: center;">
+            Don't have an account? <a href="signup.html">Sign Up</a>
         </div>
     </div>
 
-            <script src=".js"></script>
-            <script src="/js/popper.min.js"></script>
-            <script src="/js/bootstrap.min.js"></script>
-            <script src="login.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
