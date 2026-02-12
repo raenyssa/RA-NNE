@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Shopping Bag</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+</head>
+<body>
+  <div class="lottie-page">
+
+    <div class="animation-center">
+      <dotlottie-player
+        src="https://lottie.host/f79aa57e-90fd-44ce-8ff9-a1707e5aed4f/Q0vJS5bzJ3.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px;"
+        loop
+        autoplay>
+      </dotlottie-player>
+    </div>
+
+    <div class="loading-text">
+      Searching the world... Please wait<br>
+      <small>(Redirecting shortly)</small>
+    </div>
+
+  </div>
+
+  <! Lottie Player >
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="script.js"></script>
+
+  
+  <script>
+    setTimeout(function() {
+      window.location.href = "Checkedout.html";
+    }, 3000);
+  </script>
+</body>
+</html>

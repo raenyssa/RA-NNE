@@ -732,3 +732,19 @@ input[type=submit]:hover {
   transform: translateY(4px);
   box-shadow: 0 2px 0 #d86a9c;
 }
+
+/*lottie.css*/
+.lottie-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  height: 100vh;     
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+}
