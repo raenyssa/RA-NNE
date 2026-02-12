@@ -264,6 +264,10 @@ ul li a:hover {
     height: 700px;
 }
 
+.collection-text {
+    text-align: center;
+    font-family: 'Prata', serif;
+}
 /*individual clothes.css*/
 /* Reset extras (normalize handles some already) */
 * {
@@ -516,6 +520,7 @@ input[type=submit]:hover {
   display: flex;
   flex-direction: column;
   margin:auto;
+  
 }
 
 /* Heading */
