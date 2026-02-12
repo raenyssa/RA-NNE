@@ -14,28 +14,39 @@
     <div class="login-signup">
     <img src="Pictures/logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 150px; height: auto;">
 
-    <div class = "title">
-        <h1>Sign Up</h1>
-    </div>
-    <div id = "input-field">
-        <h4>Username</h4>
-    </div>
-    <div id = "input-field">
-        <h4>Email</h4>
-    </div>
-    <div id = "input-field">
-        <h4>Birthday</h4>
-    </div>
-    <div id = "input-field">
-        <h4>Phone Number</h4>
-    </div>
-    <div id = "input-field">
-        <h4>Password</h4>
-    </div>
-    <div id = "input-field">
-        <h4>Enter Password Again</h4>
-    </div>
-    <div id = "Enter-button"><a href="Newarrival.html">Enter</a></button>
-    </div>
+    <div class="title">Sign Up</div>
+<h1>Simple Contact Form System</h1>
+<div id="add-update-msg">
 </div>
+<div class="form" id="add-contact">
+  <form id="add-contact-form">
+    <div class="form-group">
+      <label for="contact-name">Name</label>
+      <input type="text" id="contact-name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="contact-birthday">Birthday</label>
+      <input type="date" id="contact-birthday" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="contact-phone">Phone number</label>
+      <input type="tel" id="contact-phone" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="contact-password">Password</label>
+      <input type="password" id="contact-password" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="contact-confirm-password">Enter password again</label>
+      <input type="password" id="contact-confirm-password" class="form-control" required>
+    </div>
+
+    <input type="submit" value="Send" class="btn btn-primary" id="contact-submit">
+  </form>
+</div>
+</div><!-- end add container -->
 </body>
