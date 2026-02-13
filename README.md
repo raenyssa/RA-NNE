@@ -1,6 +1,9 @@
 # RAENNE
 RAÉNNE
 
+Github Link: https://github.com/raenyssa/RA-NNE
+Github page: https://raenyssa.github.io/RA-NNE/
+
 Founded by two visionary teenage girls, RAÉNNE is a high-end eCommerce fashion label that redefines luxury through the lens of youth, confidence, and modern femininity. Selling clothing and accessories as the main products.
 
 Design Process
